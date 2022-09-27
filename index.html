@@ -269,6 +269,68 @@
             font-family: 苹方;
             src: url("ziti/苹方.ttf");
         }
+
+
+        .add-he-head-img {
+            opacity: 0;
+            display: none;
+        }
+
+        .add-he-head-img-box {
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.3);
+            border: 1px dashed #999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .add-he-expression-dialog {
+            opacity: 0;
+            display: none;
+        }
+
+        .add-he-expression-dialog-box {
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.3);
+            border: 1px dashed #999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .add-self-head-img {
+            opacity: 0;
+            display: none;
+        }
+
+        .add-self-head-img-box {
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.3);
+            border: 1px dashed #999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .add-self-expression-dialog {
+            opacity: 0;
+            display: none;
+        }
+
+        .add-self-expression-dialog-box {
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.3);
+            border: 1px dashed #999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
     </style>
 </head>
 <body oncontextmenu=self.event.returnValue=false style="background-color: rgb(218,185,149)">
@@ -311,6 +373,7 @@
             <label style="font-size: 50px;margin-bottom: 20px;">
                 添加或修改左边的头像 ( 不要上传透明背景的 )
                 <input type="file" class="add-he-head-img" accept="image/*" style="font-size: 50px">
+                <span class="add-he-head-img-box">+</span>
             </label>
             <button class="add-he-dialog"
                     style="font-weight:550;color:white;background-color:black;border-radius:10px;margin-left:20px;margin-top:30px;font-size: 50px;padding: 10px 10px 10px 10px;">
@@ -342,6 +405,7 @@
             <label style="font-size: 50px;">
                 添加或修改右边的头像 ( 不要上传透明背景的 )
                 <input type="file" class="add-self-head-img" accept="image/*" style="font-size: 50px;">
+                <span class="add-self-head-img-box">+</span>
             </label>
             <button class="add-self-dialog"
                     style="font-weight:550;color:white;background-color:black;border-radius:10px;margin-left:20px;margin-top:30px;font-size: 50px;padding: 10px 10px 10px 10px;">
@@ -413,9 +477,20 @@
             <label style="font-size: 50px">
                 文字 :<input type="text" placeholder="文字" class="key-words" style="font-size: 50px">
             </label>
-            <label style="font-size: 50px">
-                颜色 :<input type="color" class="key-color" value="#5B6B92" style="font-size: 50px;height: 50px;width: 200px;">
+            <label style="font-size: 50px;">
+                颜色 :<input style="font-size: 50px;width: 300px;height: 80px;" type="color" class="key-color"
+                           value="#5B6B92">
             </label>
+
+            <div style="display: inline-block;font-size: 50px;">常用颜色选择：
+                <select style="font-size: 50px; width: 400px;height: 80px;" id="pd" onchange="handleSelectChange()">
+                    <option value="#7d90a9" style="background-color:#7d90a9;"></option>
+                    <option value="#375082" style="background-color:#375082;"></option>
+                    <option value="#118ee9" style="background-color:#118ee9;"></option>
+                    <option value="#ff9530" style="background-color:#ff9530;"></option>
+                    <option value="#576b95" style="background-color:#576b95;"></option>
+                </select>
+            </div>
             <div>
                 <label style="font-size: 50px">
                     带下划线
@@ -467,6 +542,16 @@
     var ua = navigator.userAgent;
     if (ua !== "Mozilla/5.0 (Windows NT 10.0; Win64; x64; ed)") {
         document.querySelector("body").style = "display: none;"
+    }
+</script>
+
+<script>
+    function handleSelectChange() {
+        let pid = document.querySelector("#pd");
+        let item = pid.options[pid.selectedIndex];
+        let cs = document.querySelector(".key-color");
+
+        cs.value = item.value // 更改颜色
     }
 </script>
 
