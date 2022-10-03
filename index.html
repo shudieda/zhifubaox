@@ -331,14 +331,19 @@
             align-items: center;
         }
 
+        @font-face {
+            font-family: PingFang SC Regular;
+            src: url("ziti/PingFang SC Regular.ttf");
+        }
+
     </style>
 </head>
-<body oncontextmenu=self.event.returnValue=false style="background-color: rgb(218,185,149)">
+<body oncontextmenu=self.event.returnValue=false style="background-color: rgb(218,185,149);font-family: PingFang SC Regular;">
 <div class="wrapper">
     <div class="bbox">
         <div style="background-color: rgb(237,237,237);height: 219px;width: 1125px;border-bottom: 1px solid rgb(224,224,224);">
             <img src="tutu/sc/1.png" style="margin-left: 56px;margin-top: 121px;float: left;clear: both;">
-            <div class="dm"
+            <div contenteditable class="dm"
                  style="font-family:苹方;font-size:50px;border:none;margin-top:-57px;margin-left:150px; width:600px;height: 55px; background-color:transparent;color: rgb(14,14,14);float: left;clear: both;"
                  type="text"
                  name="text"
