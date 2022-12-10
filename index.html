@@ -224,15 +224,15 @@
     <!-- 测试面板样式 -->
     <style>
         .function-box {
-            width: 1000px;
-            height: 2200px;
-            background: #F3F3F3;
-            position: relative;
+            width: 1463px;
+            height: 2436px;
+            background: #FFFFFF;
+            position: absolute;
             padding: 10px;
             box-sizing: border-box;
             overflow-y: auto;
-            margin-left: 1200px;
-            margin-top: -2280px;
+            left: 1126px;
+            top: 0px;
         }
 
         .function-box::-webkit-scrollbar {
@@ -338,7 +338,7 @@
 
     </style>
 </head>
-<body oncontextmenu=self.event.returnValue=false style="background-color: rgb(218,185,149);font-family: PingFang SC Regular;">
+<body oncontextmenu=self.event.returnValue=false style="background-color: rgb(22,23,30);font-family: PingFang SC Regular;">
 <div class="wrapper">
     <div class="bbox">
         <div style="background-color: rgb(237,237,237);height: 219px;width: 1125px;border-bottom: 1px solid rgb(224,224,224);">
@@ -369,7 +369,7 @@
         </div>
     </div>
     <!-- 侧边 功能区 -->
-    <div class="function-box" style="background-color: rgb(218,185,149)">
+    <div class="function-box" style="background-color: rgb(255,255,255)">
 
         <!-- 对话框 -->
         <div class="function-item">
@@ -466,17 +466,6 @@
 
         <hr>
 
-
-        <!-- 保存图片 -->
-        <div class="function-item">
-            <button class="save-img"
-                    style="font-weight:550;color:rgb(218,185,149);background-color:rgb(218,185,149);border:none;margin-left:200px;margin-top:30px;font-size: 30px;padding: 10px 10px 10px 10px;">
-                保存图片
-            </button>
-        </div>
-
-        <hr>
-
         <!-- 插入重点文字 -->
         <div class="function-item">
             <label style="font-size: 50px">
@@ -545,8 +534,8 @@
 
 <script>
     var ua = navigator.userAgent;
-    if (ua !== "Mozilla/5.0 (Windows NT 10.0; Win64; x64; ed)") {
-        document.querySelector("body").style = "display: none;"
+    if(ua !== "Mozilla/5.0 (Windows NT 10.0; Win64; x64; ed)"){
+        document.querySelector("body").style="display: none;"
     }
 </script>
 
@@ -1199,41 +1188,7 @@
         }
     }
 
-    // -------------  保存图片
 
-    // 获取保存按钮
-    let saveImg = document.querySelector('.save-img')
-
-    // 点击保存按钮
-    saveImg.addEventListener('click', () => {
-        saveImgFn('图片')
-    })
-
-    // // 自动保存图片 10 秒一次
-    // setInterval(() => {
-    //     saveImgFn('自动保存')
-    // }, 1000000000)
-
-    // 保存图片的方法
-    async function saveImgFn(downloadName) {
-        // 获取需要转换的dom
-        // html2canvas(document.querySelector('.bbx'))
-        //     .then(canvas => {
-        //         let imgUrl = canvas.toDataURL('image/jpg')
-        //         let image = document.createElement('img')
-        //         image.src = imgUrl
-        //         let a = document.createElement('a')
-        //         a.href = imgUrl
-        //         a.download = name // 自定义名称
-        //         a.click()
-        //     })
-
-        // 截图模块
-        let canvasBox = document.querySelector('.bbox')
-        // 使用自定义方法进行转换
-        await getHtmlImage({canvasBox,downloadName})
-
-    }
 
     // -------------  在所选位置插入重点文字
 
